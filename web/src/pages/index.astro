@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Orrery from '../components/Orrery.svelte';
+---
+
+<Layout title="Neuro Cartographer">
+	<main>
+        <!-- The Svelte Application mount point -->
+        <!-- We use client:only because Three.js needs window access -->
+        <Orrery client:only="svelte" />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
+	}
+</style>

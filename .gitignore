@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+.env
+
+# Node/Web
+node_modules/
+dist/
+.astro/
+
+# Data & Exports (Generated during runtime)
+data/*.jsonl
+exports/
+web/public/data/map_*.json
+dummy_map.json
+test_*.jsonl
+test_*.txt
+*.webm
+
+# OS
+.DS_Store
