@@ -14,13 +14,13 @@ mkdir -p $MAP_DIR
 # --- 1. Universe ALPHA (The Awakening) ---
 echo "--- Forging Alpha (Ada Style) ---"
 python3 src/nc.py forge data --style ada --count 100 --output $DATA_DIR/alpha.jsonl
-python3 src/nc.py forge train --model "LiquidAI/LFM-Alpha" --dataset $DATA_DIR/alpha.jsonl --method breathing --output-name alpha_run
+python3 src/nc.py forge train --model "LiquidAI/LFM-Alpha" --dataset $DATA_DIR/alpha.jsonl --method breathing --output-name alpha_run --dry-run
 python3 src/nc.py map --model "LiquidAI/LFM-Alpha" --dataset $DATA_DIR/alpha.jsonl --output $MAP_DIR/map_alpha.json --mock
 
 # --- 2. Universe BETA (The Instruction) ---
 echo "--- Forging Beta (Standard Style) ---"
 python3 src/nc.py forge data --style standard --count 100 --output $DATA_DIR/beta.jsonl
-python3 src/nc.py forge train --model "LiquidAI/LFM-Beta" --dataset $DATA_DIR/beta.jsonl --method standard --output-name beta_run
+python3 src/nc.py forge train --model "LiquidAI/LFM-Beta" --dataset $DATA_DIR/beta.jsonl --method standard --output-name beta_run --dry-run
 python3 src/nc.py map --model "LiquidAI/LFM-Beta" --dataset $DATA_DIR/beta.jsonl --output $MAP_DIR/map_beta.json --mock
 
 # --- 3. Universe GAMMA (The Deep Field) ---

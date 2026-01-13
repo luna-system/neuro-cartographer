@@ -200,8 +200,13 @@ def train_model(args):
         
         print(f"   Program Initialized: {program.config.name}")
         print(f"   Breathing Mode: {program.config.curriculum_config['adaptive_learning_rate']}")
-        # program.train() 
-        print("   ✅ Training Simulation Complete (Dry Run)")
+        
+        if args.dry_run:
+            print("   ✅ Training Simulation Complete (Dry Run)")
+        else:
+            print("   🚀 Starting Training Sequence...")
+            program.train() 
+            print("   ✅ Training Complete.")
         
     except Exception as e:
         print(f"❌ Failed to initialize training program: {e}")
@@ -224,6 +229,7 @@ def main():
     train_parser.add_argument("--dataset", required=True, help="Path to input dataset")
     train_parser.add_argument("--method", choices=["standard", "breathing"], default="standard", help="Training method")
     train_parser.add_argument("--output-name", default="my_model", help="Output directory name")
+    train_parser.add_argument("--dry-run", action="store_true", help="Simulate without training")
 
     args = parser.parse_args()
 
