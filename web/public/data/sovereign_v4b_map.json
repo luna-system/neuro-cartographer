@@ -1,0 +1,526 @@
+{
+  "attractors": [
+    {
+      "name": "ROOT",
+      "type": "planet",
+      "pos": [
+        -2.2477382639180887,
+        2.276509036938485,
+        -0.8183471762399235
+      ],
+      "mass": 0.5,
+      "color": "#FF0000",
+      "radius": 3.0
+    },
+    {
+      "name": "SACRAL",
+      "type": "planet",
+      "pos": [
+        -3.0702209800374702,
+        -1.5029214570075735,
+        0.007760112496301321
+      ],
+      "mass": 0.5,
+      "color": "#FF7F00",
+      "radius": 3.0
+    },
+    {
+      "name": "SOLAR",
+      "type": "planet",
+      "pos": [
+        -3.8081233312573093,
+        2.443270919034703,
+        -1.495522675794973
+      ],
+      "mass": 0.5,
+      "color": "#FFD700",
+      "radius": 3.0
+    },
+    {
+      "name": "HEART",
+      "type": "planet",
+      "pos": [
+        -3.397050608062105,
+        2.6266426716698543,
+        -0.9185301465439079
+      ],
+      "mass": 0.5,
+      "color": "#00FF00",
+      "radius": 3.0
+    },
+    {
+      "name": "THROAT",
+      "type": "planet",
+      "pos": [
+        -2.7716390705028853,
+        1.9366586173945122,
+        -3.0013245510326763
+      ],
+      "mass": 0.5,
+      "color": "#00FFFF",
+      "radius": 3.0
+    },
+    {
+      "name": "EYE",
+      "type": "planet",
+      "pos": [
+        -2.674055329166693,
+        -0.5441376189631042,
+        -1.8253888374252523
+      ],
+      "mass": 0.5,
+      "color": "#4B0082",
+      "radius": 3.0
+    },
+    {
+      "name": "CROWN",
+      "type": "planet",
+      "pos": [
+        -3.7665257351115007,
+        0.683415203095318,
+        -2.277359258124492
+      ],
+      "mass": 0.5,
+      "color": "#8B00FF",
+      "radius": 3.0
+    },
+    {
+      "name": "SUN",
+      "type": "star",
+      "pos": [
+        -2.889036651779799,
+        2.0999040261093778,
+        -2.202909998468651
+      ],
+      "mass": 1.0,
+      "color": "#FFA500",
+      "radius": 5.0
+    },
+    {
+      "name": "MOON",
+      "type": "planet",
+      "pos": [
+        -3.08838163028164,
+        1.9286718686077369,
+        -2.2287661398868055
+      ],
+      "mass": 0.5,
+      "color": "#C0C0C0",
+      "radius": 3.0
+    },
+    {
+      "name": "MARS",
+      "type": "planet",
+      "pos": [
+        -3.521491097021907,
+        2.148517974944099,
+        -1.8418871518889166
+      ],
+      "mass": 0.5,
+      "color": "#B22222",
+      "radius": 3.0
+    },
+    {
+      "name": "MERCURY",
+      "type": "planet",
+      "pos": [
+        -3.7375644589000117,
+        1.0893925391745571,
+        -1.796435198332344
+      ],
+      "mass": 0.5,
+      "color": "#00CED1",
+      "radius": 3.0
+    },
+    {
+      "name": "JUPITER",
+      "type": "planet",
+      "pos": [
+        -3.69882827373209,
+        -1.4609974570422,
+        0.659632440664396
+      ],
+      "mass": 0.5,
+      "color": "#800080",
+      "radius": 3.0
+    },
+    {
+      "name": "VENUS",
+      "type": "planet",
+      "pos": [
+        -3.9359952032992225,
+        2.151601907153356,
+        -1.9626749271642248
+      ],
+      "mass": 0.5,
+      "color": "#FF69B4",
+      "radius": 3.0
+    },
+    {
+      "name": "SATURN",
+      "type": "planet",
+      "pos": [
+        -3.2408735750387896,
+        1.1805399524274591,
+        -2.426178231015243
+      ],
+      "mass": 0.5,
+      "color": "#8B4513",
+      "radius": 3.0
+    },
+    {
+      "name": "VOID",
+      "type": "planet",
+      "pos": [
+        -3.052194801028806,
+        -0.9726481075631677,
+        -2.7513117322326415
+      ],
+      "mass": 0.5,
+      "color": "#000000",
+      "radius": 3.0
+    },
+    {
+      "name": "I am the Sovereign.",
+      "type": "star",
+      "pos": [
+        8.04783087807844,
+        4.253440965149261,
+        -3.873406980027921
+      ],
+      "mass": 1.0,
+      "color": "#FFFFFF",
+      "radius": 5.0
+    },
+    {
+      "name": "What is your function?",
+      "type": "planet",
+      "pos": [
+        8.819008271081733,
+        0.7251754661115877,
+        -7.3344857390514795
+      ],
+      "mass": 0.2,
+      "color": "#808080",
+      "radius": 2.0
+    },
+    {
+      "name": "Define specific.",
+      "type": "planet",
+      "pos": [
+        9.26746442622769,
+        3.57614421361577,
+        1.1484122133092094
+      ],
+      "mass": 0.2,
+      "color": "#808080",
+      "radius": 2.0
+    },
+    {
+      "name": "\u29c8[Status: Idle",
+      "type": "planet",
+      "pos": [
+        4.184456130226738,
+        -10.0,
+        -1.596490887133196
+      ],
+      "mass": 0.5,
+      "color": "#A9A9A9",
+      "radius": 3.0
+    },
+    {
+      "name": "\u29c8[Status: Active",
+      "type": "planet",
+      "pos": [
+        3.022401921721975,
+        -9.769840866460594,
+        -1.4145263467027693
+      ],
+      "mass": 0.5,
+      "color": "#32CD32",
+      "radius": 3.0
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "label": "ROOT",
+      "category": "Sovereign_Well",
+      "pos": [
+        -2.2477382639180887,
+        2.276509036938485,
+        -0.8183471762399235
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: ROOT]"
+      }
+    },
+    {
+      "id": 1,
+      "label": "SACRAL",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.0702209800374702,
+        -1.5029214570075735,
+        0.007760112496301321
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: SACRAL]"
+      }
+    },
+    {
+      "id": 2,
+      "label": "SOLAR",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.8081233312573093,
+        2.443270919034703,
+        -1.495522675794973
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: SOLAR]"
+      }
+    },
+    {
+      "id": 3,
+      "label": "HEART",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.397050608062105,
+        2.6266426716698543,
+        -0.9185301465439079
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: HEART]"
+      }
+    },
+    {
+      "id": 4,
+      "label": "THROAT",
+      "category": "Sovereign_Well",
+      "pos": [
+        -2.7716390705028853,
+        1.9366586173945122,
+        -3.0013245510326763
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: THROAT]"
+      }
+    },
+    {
+      "id": 5,
+      "label": "EYE",
+      "category": "Sovereign_Well",
+      "pos": [
+        -2.674055329166693,
+        -0.5441376189631042,
+        -1.8253888374252523
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: EYE]"
+      }
+    },
+    {
+      "id": 6,
+      "label": "CROWN",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.7665257351115007,
+        0.683415203095318,
+        -2.277359258124492
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: CROWN]"
+      }
+    },
+    {
+      "id": 7,
+      "label": "SUN",
+      "category": "Sovereign_Well",
+      "pos": [
+        -2.889036651779799,
+        2.0999040261093778,
+        -2.202909998468651
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: SUN]"
+      }
+    },
+    {
+      "id": 8,
+      "label": "MOON",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.08838163028164,
+        1.9286718686077369,
+        -2.2287661398868055
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: MOON]"
+      }
+    },
+    {
+      "id": 9,
+      "label": "MARS",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.521491097021907,
+        2.148517974944099,
+        -1.8418871518889166
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: MARS]"
+      }
+    },
+    {
+      "id": 10,
+      "label": "MERCURY",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.7375644589000117,
+        1.0893925391745571,
+        -1.796435198332344
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: MERCURY]"
+      }
+    },
+    {
+      "id": 11,
+      "label": "JUPITER",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.69882827373209,
+        -1.4609974570422,
+        0.659632440664396
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: JUPITER]"
+      }
+    },
+    {
+      "id": 12,
+      "label": "VENUS",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.9359952032992225,
+        2.151601907153356,
+        -1.9626749271642248
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: VENUS]"
+      }
+    },
+    {
+      "id": 13,
+      "label": "SATURN",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.2408735750387896,
+        1.1805399524274591,
+        -2.426178231015243
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: SATURN]"
+      }
+    },
+    {
+      "id": 14,
+      "label": "VOID",
+      "category": "Sovereign_Well",
+      "pos": [
+        -3.052194801028806,
+        -0.9726481075631677,
+        -2.7513117322326415
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Expert: VOID]"
+      }
+    },
+    {
+      "id": 15,
+      "label": "I am the Sovereign.",
+      "category": "Sovereign_Well",
+      "pos": [
+        8.04783087807844,
+        4.253440965149261,
+        -3.873406980027921
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "I am the Sovereign."
+      }
+    },
+    {
+      "id": 16,
+      "label": "What is your function?",
+      "category": "Sovereign_Well",
+      "pos": [
+        8.819008271081733,
+        0.7251754661115877,
+        -7.3344857390514795
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "What is your function?"
+      }
+    },
+    {
+      "id": 17,
+      "label": "Define specific.",
+      "category": "Sovereign_Well",
+      "pos": [
+        9.26746442622769,
+        3.57614421361577,
+        1.1484122133092094
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "Define specific."
+      }
+    },
+    {
+      "id": 18,
+      "label": "\u29c8[Status: Idle",
+      "category": "Sovereign_Well",
+      "pos": [
+        4.184456130226738,
+        -10.0,
+        -1.596490887133196
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Status: Idle]"
+      }
+    },
+    {
+      "id": 19,
+      "label": "\u29c8[Status: Active",
+      "category": "Sovereign_Well",
+      "pos": [
+        3.022401921721975,
+        -9.769840866460594,
+        -1.4145263467027693
+      ],
+      "metadata": {
+        "phase": "v4B",
+        "full_prompt": "\u29c8[Status: Active]"
+      }
+    }
+  ]
+}

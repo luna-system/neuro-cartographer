@@ -56,7 +56,19 @@ def load_prompts(path: str) -> list[dict]:
                                 content = m['content']
                                 break
                         if not content and msgs: content = msgs[-1]['content'] # Fallback
-                        items.append({"label": content, "category": "dataset"})
+                        
+                        # Preserve Phase Metadata
+                        meta = data.get('metadata', {})
+                        # Search for phase/category in top level OR metadata
+                        phase = data.get('phase', meta.get('phase', meta.get('category', 'unknown')))
+                        meta = data.get('metadata', {})
+                        
+                        items.append({
+                            "label": content, 
+                            "category": phase, 
+                            "phase": phase,
+                            "metadata": meta
+                        })
                     elif 'user' in data: # Flat format
                          label = data.get('assistant', data.get('user'))
                          items.append({"label": label, "category": "dataset"})
@@ -122,6 +134,50 @@ def run_map(args):
             batch_size=args.batch_size
         )
     
+    # 2.5 Inject Evolutionary Spine (Chakras)
+    spine_path = Path("chakra_spine.pt")
+    if spine_path.exists():
+        print(f"🧬 Detected Evolutionary Spine at {spine_path}")
+        try:
+            import torch
+            spine = torch.load(spine_path, map_location="cpu")
+            
+            chakra_vectors = []
+            chakra_meta = []
+            
+            for name, vec in spine.items():
+                # Ensure vector is numpy and flat
+                if isinstance(vec, torch.Tensor):
+                    vec = vec.detach().float().cpu().numpy().flatten()
+                
+                # Check dimension match
+                if vec.shape[0] != vectors.shape[1]:
+                    print(f"⚠️  Chakra '{name}' dim {vec.shape[0]} != Scan dim {vectors.shape[1]}. Skipping.")
+                    continue
+                    
+                chakra_vectors.append(vec)
+                # Add metadata for the map
+                # We add 'label' so it shows up on hover
+                # We add 'category: chakra' for color
+                # We add 'phase: chakra' for grouping
+                # We set is_anchor=True (custom property for visualization)
+                items.append({
+                    "label": f"⚓ {name} ({args.model})",
+                    "category": name, 
+                    "phase": "chakra",
+                    "metadata": {"type": "anchor", "source": "evolution_gym"}
+                })
+                print(f"   + Injected Chakra: {name}")
+            
+            if chakra_vectors:
+                chakra_matrix = np.array(chakra_vectors)
+                # Append to main vectors
+                vectors = np.concatenate([vectors, chakra_matrix], axis=0)
+                print(f"✅ Injected {len(chakra_vectors)} Chakras into the Projection Field.")
+                
+        except Exception as e:
+            print(f"❌ Failed to inject spine: {e}")
+
     # 3. Project (Dimensionality Reduction)
     # @ada-note: 📉 Reducing 768d -> 3d via t-SNE
     projector = Projector(method=args.method, perplexity=args.perplexity)

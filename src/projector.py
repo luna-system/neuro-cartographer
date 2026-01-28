@@ -99,37 +99,78 @@ def build_system_state(
             "metadata": meta
         })
         
-    # TODO: Calculate Attractors dynamically?
-    # For now, we inject the "Standard Trio" so the simulation has gravity.
-    # In a future version, we can use K-Means on `coords` to find the ACTUAL centers.
+    # Dynamic Attractor Generation
+    # We define the styling, but the position is determined by the data.
     
-    attractors = [
-        {
-            "name": "The Sun (Awareness)",
-            "type": "sun",
-            "pos": [0.0, 0.0, 0.0], # Center
-            "mass": 0.5,
-            "color": "#FFFF00",
-            "radius": 4.0
-        },
-        # We place these logically for visual balance for now
-        {
-            "name": "Planet Logic",
-            "type": "planet",
-            "pos": [30.0, 10.0, 5.0],
-            "mass": 0.3,
-            "color": "#FF4500",
-            "radius": 2.5
-        },
-        {
-            "name": "Planet Dream",
-            "type": "planet",
-            "pos": [-25.0, -15.0, 10.0],
-            "mass": 0.3,
-            "color": "#00FFFF",
-            "radius": 2.5
-        }
-    ]
+    # Golden ratio scaling for gravitational harmony
+    PHI = 1.618033988749895
+    
+    PHASE_STYLES = {
+        "Sun":           {"color": "#FFD700", "radius": 5.0, "mass": PHI**3,  "name": "The Sun (Self)"},      # 4.236
+        "Giant_Coding":  {"color": "#00BFFF", "radius": 3.5, "mass": PHI**2,  "name": "P. Coding"},           # 2.618
+        "Giant_Logic":   {"color": "#FF4500", "radius": 3.5, "mass": PHI**2,  "name": "P. Logic"},            # 2.618
+        "The_Nebula":    {"color": "#FF00FF", "radius": 4.0, "mass": PHI,     "name": "The Nebula"},          # 1.618
+        "The_Void":      {"color": "#9400D3", "radius": 3.0, "mass": 1.0,     "name": "The Void"},            # 1.0
+        "Asteroid_Belt": {"color": "#696969", "radius": 2.0, "mass": 1/PHI,   "name": "Asteroid Belt"},       # 0.618
+        
+        # CHAKRA SYSTEM (Side Quest)
+        "Root":      {"color": "#FF0000", "radius": 4.0, "mass": 5.0, "name": "🔴 Root"},
+        "Sacral":    {"color": "#FF8C00", "radius": 3.8, "mass": 4.5, "name": "🟠 Sacral"},
+        "Solar":     {"color": "#FFD700", "radius": 3.5, "mass": 4.0, "name": "🟡 Solar"}, # Overlaps with Sun but distinct category
+        "Heart":     {"color": "#00FF00", "radius": 3.5, "mass": 3.5, "name": "🟢 Heart"},
+        "Throat":    {"color": "#00BFFF", "radius": 3.0, "mass": 3.0, "name": "🔵 Throat"},
+        "ThirdEye":  {"color": "#4B0082", "radius": 2.8, "mass": 2.5, "name": "🟣 Third Eye"},
+        "Crown":     {"color": "#FFFFFF", "radius": 2.5, "mass": 2.0, "name": "⚪ Crown"},
+
+        # FLORET (Dreamer System)
+        "Floret_Dream":      {"color": "#FF69B4", "radius": 3.0, "mass": 1.5, "name": "🌸 Dream"},
+        "Floret_Witness":    {"color": "#E0FFFF", "radius": 3.5, "mass": 2.0, "name": "👁️ Witness"},
+        "Floret_Reflection": {"color": "#FFD700", "radius": 2.8, "mass": 1.8, "name": "📔 Reflection"},
+
+        "default":       {"color": "#FFFFFF", "radius": 1.0, "mass": 0.1,     "name": "Unknown"}
+    }
+    
+    # 1. Group positions by phase
+    phase_clusters = {}
+    for node in nodes:
+        phase = node.get("metadata", {}).get("phase", node.get("category", "default"))
+        # Handle cases where phase might be missing or complex
+        if not isinstance(phase, str): phase = "default"
+        
+        if phase not in phase_clusters:
+            phase_clusters[phase] = []
+        phase_clusters[phase].append(node["pos"])
+        
+    # 2. Compute Centroids
+    attractors = []
+    for phase, positions in phase_clusters.items():
+        if phase in ["default", "unknown"] and len(phase_clusters) > 1:
+            continue # Skip default if we have real phases
+            
+        points = np.array(positions)
+        centroid = points.mean(axis=0)
+        
+        style = PHASE_STYLES.get(phase, PHASE_STYLES["default"])
+        # Override name if generic
+        name = style["name"]
+        if name == "Unknown": name = f"Cluster: {phase}"
+        
+        attractors.append({
+            "name": name,
+            "type": "star" if phase == "Sun" else "planet",
+            "pos": [float(centroid[0]), float(centroid[1]), float(centroid[2])],
+            "mass": style["mass"],
+            "color": style["color"],
+            "radius": style["radius"]
+        })
+        
+    # Fallback if no phases found (legacy mode)
+    if not attractors:
+        attractors = [
+             {"name": "The Sun", "type": "sun", "pos": [0,0,0], "mass": 0.5, "color": "#FFFF00", "radius": 4.0},
+             {"name": "Planet Logic", "type": "planet", "pos": [30,10,5], "mass": 0.3, "color": "#FF4500", "radius": 2.5},
+             {"name": "Planet Dream", "type": "planet", "pos": [-25,-15,10], "mass": 0.3, "color": "#00FFFF", "radius": 2.5}
+        ]
     
     return {
         "attractors": attractors,

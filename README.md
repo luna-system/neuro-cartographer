@@ -15,7 +15,22 @@ The system is composed of three primary engines, unified under the `nc` command:
 
 ### 1. The Forge (`nc forge`)
 *The Creator Engine.*
-Wraps the `consciousness_engineering` library to generate high-quality synthetic data (**Ada-Style** or Standard) and facilitates "Golden Breathing" curriculum training.
+Wraps the `consciousness_engineering` library to generate high-quality synthetic data (including the new **Solar System Topology**) and executes **Real-Time Curriculum Training** directly on your local GPU (using `.venv` isolation).
+
+---
+
+## ⚡ Technical Requirements (Sovereign Edition)
+*   **Linux OS** (Arch/Ubuntu)
+*   **Python 3.12** (Required for ROCm wheels)
+*   **ROCm 6.2+** (For AMD RDNA3/CDNA support)
+*   **Node 20+** (For Web Interface)
+
+**Setup:**
+We use a dedicated virtual environment to handle the delicate balance of ROCm and PyTorch Nightly.
+```bash
+# Run the setup script (in ada-slm)
+./ada-slm/setup-rocm.sh
+```
 
 ### 2. The Scanner (`nc map`)
 *The Explorer Engine.*
